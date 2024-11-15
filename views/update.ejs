@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Healthcare Services</title>
+</head>
+
+<body>
+  <div class="h-screen w-full bg-zinc-900 p-10">
+    <h3 class="text-3xl font-semibold text-green-400 mb-4">Update Service</h3>
+
+    <form action="/update/<%=user._id %> " method="post">
+
+      <input class="p-1 bg-zinc-800 border rounded-lg border-none text-zinc-400" type="text" placeholder="Service Name"
+   name="serviceName" value="<%=user.serviceName %>">
+
+      <input class="p-1 bg-zinc-800 border rounded-lg border-none text-zinc-400" type="text" placeholder="Description" name="description" value="<%=user.description %>">
+
+      <input class="p-1 bg-zinc-800 border rounded-lg border-none text-zinc-400" type="text" placeholder="Price" name="price" value="<%=user.price %>">
+      
+      <input class=" p-1 bg-yellow-500  font-bold border rounded-md px-3 mb-5 " type="submit" value="Update">
+    </form>
+    <a class="text-mb font-bold text-white py-1 px-4 bg-green-500 border rounded-lg  " href="/">Go back</a>
+
+  </div>
+</body>
+
+</html>

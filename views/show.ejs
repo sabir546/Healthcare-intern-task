@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Healthcare Services</title>
+</head>
+
+<body>
+  <div class="min-h-screen w-full bg-gray-900 p-6 text-white flex flex-col items-center">
+    <h3 class="text-3xl font-semibold text-green-400 mb-4">All Services</h3>
+    <a class="text-md font-semibold text-gray-900 py-2 px-5 bg-green-500 rounded-lg hover:bg-green-600 transition duration-300 ease-in-out mb-6" href="/">Go Back</a>
+    <div class="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <% users.forEach(function(ele) { %>
+      <div class="min-h-48 bg-zinc-800 p-5 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 ease-in-out">
+
+        <h3 class="text-2xl font-semibold text-green-400"><span class="text-lg font-bold text-gray-200">Service Name:</span> <%= ele.serviceName %></h3>
+
+        <h3 class="text-sm text-gray-300 mt-2"><span class="text-lg font-semibold text-gray-200">Description:</span> <%= ele.description %></h3>
+        
+        <h5 class="text-lg font-bold text-green-400 mt-3"><span class="text-lg font-semibold text-gray-200">Price:</span> ₹<%= ele.price %></h5>
+        
+        <div class="w-full bg-zinc-900 rounded-md flex justify-between mt-4 px-4 py-2">
+          <a class="text-blue-400 hover:text-blue-500 font-semibold" href="/edit/<%= ele._id %>">Edit</a>
+          <a class="text-red-400 hover:text-red-500 font-semibold" href="/delete/<%= ele._id %>">Delete</a>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+
+</html>
